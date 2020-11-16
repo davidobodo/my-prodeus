@@ -1,0 +1,124 @@
+@import "@/styles/Global.scss";
+
+.course-modal-component {
+    padding: 40px 30px;
+    width: 360px !important;
+    border-radius: 20px !important;
+    position: relative;
+
+    .cancel-icon {
+        position: absolute;
+        top: 25px;
+        left: 30px;
+        cursor: pointer;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .btn-purple {
+            background-color: $purple;
+            border-radius: 10px;
+            width: 100%;
+            border: 0px;
+            color: #fff;
+            padding: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        .courses-wrapper {
+            width: 100%;
+            height: 400px;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 3px;
+                height: 0px;
+            }
+
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: $light-ash;
+            }
+
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: $ash;
+            }
+
+            .course-details {
+                display: flex;
+                width: 100%;
+                cursor: pointer;
+                padding: 10px 0px;
+
+                &:hover {
+                    background-color: $light-ash;
+                }
+
+                .img-wrapper {
+                    background-color: $ash;
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 10px;
+                    margin-right: 15px;
+                    position: relative;
+                    flex-shrink: 0;
+                    background-size: cover;
+                    background-position: center;
+
+                    .badge {
+                        position: absolute;
+                        top: 5px;
+                        left: 5px;
+                        background-color: #fff;
+                        color: $purple;
+                        border-radius: 5px;
+                        font-size: 10px;
+                        width: 18px;
+                        height: 18px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+
+                .details {
+                    display: flex;
+                    flex-direction: column;
+                    h6 {
+                        color: $purple;
+                        font-family: roboto-regular;
+                        margin-bottom: 5px;
+                    }
+
+                    h4 {
+                        font-family: roboto-regular;
+                    }
+
+                    &__info {
+                        display: flex;
+                        margin-top: auto;
+
+                        .col {
+                            margin-right: 10px;
+                            display: flex;
+                            align-items: center;
+
+                            img {
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

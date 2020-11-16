@@ -1,0 +1,17 @@
+@import "@/styles/Global.scss";
+
+.file-component {
+    background-color: $purple;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 8px;
+    color: #fff;
+    font-family: muli-bold;
+    height: 26px;
+
+    svg {
+        margin-right: 7px;
+    }
+}

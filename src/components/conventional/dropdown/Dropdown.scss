@@ -1,0 +1,355 @@
+@import "@/styles/Global.scss";
+
+//---------------------------------------------------------------------------
+//Simple Dropdown
+//---------------------------------------------------------------------------
+.simpledropdown-component {
+    position: relative;
+    .dd-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+        background-color: #fff;
+        color: $ash;
+        padding: 0px 25px;
+        border-radius: 10px;
+        font-size: 18px;
+        font-family: muli-light;
+        cursor: pointer;
+
+        .dd-header-title {
+            border: 0px;
+            border: 0px;
+            width: 100%;
+            outline: none;
+            color: $ash;
+            font-size: 18px;
+            font-family: muli-light;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        ::placeholder {
+            color: $ash;
+            font-size: 18px;
+            font-family: muli-light;
+        }
+
+        .dropdown-icon {
+            transform: rotate(270deg);
+        }
+    }
+
+    .dd-list {
+        cursor: pointer;
+        list-style: none;
+        position: absolute;
+        top: 80%;
+        width: 100%;
+        z-index: 10000;
+        max-height: 200px;
+        overflow-y: scroll;
+        opacity: 0;
+        height: 0px;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #fff;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: $ash;
+        }
+
+        .dd-list-item {
+            background-color: #fff;
+            padding: 0px 25px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            color: $ash;
+            font-size: 18px;
+            font-family: muli-light;
+        }
+    }
+
+    //When dropdown is open
+    &.is-open {
+        .dd-header {
+            border: 1px solid rgba(180, 180, 201, 0.25);
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+
+        .dd-list {
+            border: 1px solid rgba(180, 180, 201, 0.25);
+            border-top: 0px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            opacity: 1;
+            height: auto;
+        }
+    }
+}
+
+//---------------------------------------------------------------------------
+//Multiple Dropdown with Plus and minus checkbox
+//---------------------------------------------------------------------------
+
+.multiple-selection-dropdown-component-plus-icon {
+    position: relative;
+
+    .dd-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+        background-color: #fff;
+        color: $ash;
+        padding: 0px 25px;
+        border-radius: 10px;
+        font-size: 18px;
+        font-family: muli-light;
+        cursor: pointer;
+        position: relative;
+
+        &__left-column {
+            position: absolute;
+            z-index: 3;
+            left: 17px;
+        }
+        input {
+            position: absolute;
+            z-index: 5;
+            background-color: transparent;
+            border: 0px;
+            width: 100%;
+            outline: none;
+            color: $ash;
+            font-size: 18px;
+            font-family: muli-light;
+            height: 100%;
+            left: 0px;
+            padding: 0px 40px;
+            cursor: pointer;
+        }
+
+        ::placeholder {
+            color: $ash;
+            font-size: 18px;
+            font-family: muli-light;
+        }
+
+        &__right-column {
+            position: absolute;
+            z-index: 3;
+            right: 17px;
+
+            .count {
+                background-color: $blue;
+                color: #fff;
+                border-radius: 5px;
+                width: 24px;
+                height: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 2px;
+                font-family: muli-light;
+            }
+
+            .icon-wrapper {
+                width: 24px;
+                height: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    .dd-list {
+        cursor: pointer;
+        list-style: none;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        z-index: 1000;
+        padding-top: 10px;
+        background-color: #fff;
+        max-height: 200px;
+        overflow-y: scroll;
+        opacity: 0;
+        height: 0px;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #fff;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: $ash;
+        }
+
+        .dd-list-item {
+            background-color: #fff;
+            padding: 0px 25px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: $ash;
+            font-size: 18px;
+            font-family: muli-light;
+        }
+    }
+
+    //When dropdown is open
+    &.is-open {
+        .dd-header {
+            border: 1px solid rgba(180, 180, 201, 0.25);
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+
+        .dd-list {
+            border: 1px solid rgba(180, 180, 201, 0.25);
+            border-top: 0px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            opacity: 1;
+            height: auto;
+        }
+    }
+}
+
+//---------------------------------------------------------------------------
+//Multiple Dropdown with Checkmark checkbox
+//---------------------------------------------------------------------------
+
+.multiple-selection-dropdown-component-checkmark {
+    position: relative;
+
+    .dd-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+        background-color: #fff;
+        color: $ash;
+        padding: 0px 25px;
+        border-radius: 10px;
+        font-size: 18px;
+        font-family: muli-light;
+        cursor: pointer;
+        position: relative;
+
+        input {
+            border: 0px;
+            border: 0px;
+            width: 100%;
+            outline: none;
+            color: $ash;
+            font-size: 18px;
+            font-family: muli-light;
+            background-color: transparent;
+            position: absolute;
+            left: 0px;
+            z-index: 5;
+
+            padding: 0px 20px;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        ::placeholder {
+            color: $ash;
+            font-size: 18px;
+            font-family: muli-light;
+        }
+
+        .icon-wrapper {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            z-index: 3;
+            right: 17px;
+        }
+    }
+
+    .dd-list {
+        cursor: pointer;
+        list-style: none;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        z-index: 1000;
+        background-color: #fff;
+        max-height: 200px;
+        overflow-y: scroll;
+        opacity: 0;
+        height: 0px;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #fff;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: $ash;
+        }
+
+        .dd-list-item {
+            background-color: #fff;
+            padding: 0px 25px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            color: $ash;
+            font-size: 18px;
+            font-family: muli-light;
+
+            .checkmark-checkbox-component {
+                margin-right: 15px;
+                margin-top: 3px;
+            }
+        }
+    }
+
+    //When dropdown is open
+    &.is-open {
+        .dd-header {
+            border: 1px solid rgba(180, 180, 201, 0.25);
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+
+        .dd-list {
+            border: 1px solid rgba(180, 180, 201, 0.25);
+            border-top: 0px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            opacity: 1;
+            height: auto;
+        }
+    }
+}

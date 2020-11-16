@@ -1,0 +1,23 @@
+@import "@/styles/Global.scss";
+
+.search-filter-component {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 17px 25px;
+
+    input {
+        border: 0px;
+        background-color: transparent;
+        flex: 1;
+        outline: transparent;
+        color: $ash;
+        font-size: 24px;
+        padding: 10px 20px;
+    }
+
+    ::placeholder {
+        color: $ash;
+    }
+}

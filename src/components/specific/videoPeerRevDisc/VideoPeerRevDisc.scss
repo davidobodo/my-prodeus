@@ -1,0 +1,21 @@
+@import "@/styles/Global.scss";
+
+.video-peer-rev-disc-component {
+    @media (min-width: $lg-laptop-breakpoint) {
+        display: grid;
+        grid-template-columns: 2fr 360px;
+        grid-gap: 40px;
+    }
+
+    .left-section {
+        margin-bottom: 40px;
+    }
+
+    .right-section {
+        &__top {
+        }
+
+        &__bottom {
+        }
+    }
+}

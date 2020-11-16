@@ -1,0 +1,341 @@
+@import "@/styles/Global.scss";
+
+#activity-page {
+    .activity-page {
+        background-color: #b4b4c926;
+        min-height: 100vh;
+
+        &__body {
+            padding: 30px;
+
+            @media (min-width: $lg-laptop-breakpoint) {
+                padding: 70px;
+            }
+        }
+
+        &__title {
+            margin-bottom: 30px;
+        }
+
+        &__content {
+            @media (min-width: $xl-laptop-breakpoint) {
+                display: grid;
+                grid-gap: 40px;
+                grid-template-columns: 2fr 1fr;
+            }
+
+            .section {
+                background-color: #fff;
+                border-radius: 15px;
+                margin-bottom: 30px;
+                padding: 30px;
+            }
+
+            &__left-column {
+                .section {
+                    padding: 30px 50px;
+                }
+
+                // Left section course card
+                .course-card-section-wrapper {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 20px;
+
+                    @media (min-width: $xl-laptop-breakpoint) {
+                        display: none;
+                    }
+
+                    .course-card-component {
+                        &__title {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-bottom: 10px;
+
+                            h3 {
+                                font-family: muli-regular;
+                            }
+
+                            &__img-wrapper {
+                                width: 32px;
+                                height: 32px;
+
+                                img {
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        &__level {
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+
+                .bar-chart-wrapper {
+                    display: flex;
+                    flex-direction: column;
+
+                    &__header {
+                        display: flex;
+                        justify-content: space-between;
+                        .legend {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            grid-gap: 10px 30px;
+
+                            &__item {
+                                display: flex;
+                                align-items: center;
+
+                                span {
+                                    width: 10px;
+                                    height: 10px;
+                                    border-radius: 50%;
+                                    display: block;
+                                    margin-right: 10px;
+                                }
+                                h5 {
+                                    font-family: muli-regular;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .topics-card {
+                    &__title {
+                        margin-bottom: 30px;
+                    }
+                    &__color-bar {
+                        height: 20px;
+                        border-radius: 50px;
+                        width: 100%;
+                        overflow: hidden;
+                        margin-bottom: 30px;
+                        background-color: $ash;
+
+                        span {
+                            height: 100%;
+                        }
+                    }
+
+                    &__courses {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-gap: 10px;
+                        &__course {
+                            display: flex;
+                            align-items: center;
+
+                            .color-code {
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                margin-right: 20px;
+                                display: block;
+                            }
+
+                            h3 {
+                                // margin-bottom: 5px;
+                            }
+
+                            h5 {
+                                color: $ash;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__right-column {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 0px 30px;
+
+                @media (min-width: $xl-laptop-breakpoint) {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                // This is used to manipulate the order of each section in the right column
+                .row {
+                    &:nth-child(1) {
+                        order: 1;
+                        @media (min-width: $xl-laptop-breakpoint) {
+                            order: 1;
+                        }
+                    }
+                    &:nth-child(2) {
+                        order: 2;
+                        @media (min-width: $xl-laptop-breakpoint) {
+                            order: 2;
+                        }
+                    }
+                    &:nth-child(3) {
+                        order: 3;
+                        @media (min-width: $xl-laptop-breakpoint) {
+                            order: 3;
+                        }
+                    }
+                    &:nth-child(4) {
+                        order: 4;
+                        @media (min-width: $xl-laptop-breakpoint) {
+                            order: 4;
+                        }
+                    }
+                    &:nth-child(5) {
+                        order: 5;
+                        @media (min-width: $xl-laptop-breakpoint) {
+                            order: 6; //The main change
+                        }
+                    }
+                    &:nth-child(6) {
+                        order: 6;
+                        @media (min-width: $xl-laptop-breakpoint) {
+                            order: 5; //The main change
+                        }
+                    }
+                    &:nth-child(7) {
+                        order: 7;
+                        @media (min-width: $xl-laptop-breakpoint) {
+                            order: 7;
+                        }
+                    }
+                }
+
+                // right section course card
+                .course-card-section-wrapper {
+                    display: none;
+
+                    @media (min-width: $xl-laptop-breakpoint) {
+                        display: block;
+                    }
+
+                    .course-card-component {
+                        &__title {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-bottom: 10px;
+
+                            h3 {
+                                font-family: muli-regular;
+                            }
+
+                            &__img-wrapper {
+                                width: 32px;
+                                height: 32px;
+
+                                img {
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        &__level {
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+                .number-card-component {
+                    background-color: #fff;
+                    border-radius: 15px;
+                    padding: 30px;
+                    margin-bottom: 30px;
+                    display: flex;
+                    align-items: center;
+
+                    &__icon-wrapper {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        margin-right: 20px;
+                        flex-shrink: 0;
+                    }
+                }
+
+                .percentage-card-component {
+                    background-color: #fff;
+                    border-radius: 15px;
+                    padding: 30px;
+                    margin-bottom: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    &__info {
+                        flex-basis: 50px;
+                        margin-right: 20px;
+
+                        h1 {
+                            line-height: 38px;
+                        }
+                    }
+
+                    &__percent-wrapper {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        margin-right: 20px;
+                        flex-shrink: 0;
+
+                        .number {
+                            font-family: muli-bold;
+                            font-size: 24px;
+                            color: #000;
+                            position: relative;
+
+                            sup {
+                                color: $ash;
+                                font-family: muli-regular;
+                                font-size: 13px;
+                                position: absolute;
+                                top: 3px;
+                                right: -11px;
+                            }
+                        }
+                    }
+                }
+
+                .difficulty {
+                    h1 {
+                        margin-bottom: 15px;
+                    }
+
+                    &__color-summary {
+                        margin-bottom: 15px;
+
+                        span {
+                            height: 10px;
+                            border-radius: 10px;
+                            background-color: red;
+                        }
+                    }
+                    &__level {
+                        margin-bottom: 10px;
+
+                        &__info {
+                            h3 {
+                                display: flex;
+                                align-items: center;
+
+                                .color-code {
+                                    width: 10px;
+                                    height: 10px;
+                                    border-radius: 50%;
+                                    margin-right: 10px;
+                                    display: block;
+                                }
+                            }
+                            h5 {
+                                color: $ash;
+                                font-family: muli-regular;
+                                margin-left: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

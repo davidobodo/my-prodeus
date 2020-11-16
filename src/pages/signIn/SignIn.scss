@@ -1,0 +1,218 @@
+@import "@/styles/Global.scss";
+
+/*This style sheets is messed up with a lot of breakpoints because
+at we were pressed for time at some point during development process, hence 
+had to write shitty code just to make stuff work.
+Bear with me, just in case you need to refactor 
+*/
+#signin-page {
+    display: flex;
+    height: 100vh;
+    background-color: $blue;
+    position: relative;
+    overflow: hidden;
+
+    .left-column {
+        padding: 60px 37px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #fff;
+        margin: 120px 0px 120px 60px;
+        border-radius: 30px;
+        width: 375px;
+
+        // @media (min-width: $md-laptop-breakpoint) {
+        //     padding: 30px 37px;
+        //     margin: 80px 0px 50px 59px;
+        //     border-radius: 30px;
+        //     width: 375px;
+        // }
+
+        @media (min-width: $lg-laptop-breakpoint) {
+            flex-shrink: 0;
+            padding: 60px 40px;
+            margin-left: 100px;
+            width: 400px;
+        }
+
+        @media (min-width: $wide-screens-breakpoint) {
+            padding: 100px 60px;
+            margin: 120px 0px 90px 160px;
+            width: 560px;
+        }
+
+        .logo-wrapper {
+            text-align: center;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+
+            .input-wrapper {
+                margin-bottom: 20px;
+
+                input {
+                    font-family: muli-light;
+                }
+
+                .error-message {
+                    color: $red;
+                    margin-top: 7px;
+                    margin-left: 12px;
+                }
+            }
+
+            .response-error-message {
+                color: #ff0000;
+                text-align: center;
+                margin-top: 10px;
+                font-size: 10px;
+            }
+        }
+
+        .divider {
+            position: relative;
+            margin-bottom: 30px;
+            height: 1px;
+
+            .text {
+                color: $ash;
+                background-color: #fff;
+                width: 80px;
+                height: 35px;
+                position: absolute;
+                z-index: 2;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 16px;
+                font-family: muli-regular;
+            }
+
+            .line {
+                border-bottom: 1px solid $ash;
+                position: absolute;
+                width: 100%;
+                z-index: 1;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .google-auth {
+            margin-bottom: 15px;
+
+            button {
+                background-color: $dark !important;
+
+                .title {
+                    margin-bottom: 4px;
+                }
+            }
+
+            .google-icon-wrapper {
+                background-color: #fff;
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 30px;
+            }
+        }
+
+        .terms-conditions {
+            color: $ash;
+            text-align: center;
+            margin-bottom: 30px;
+
+            a {
+                font-size: 16px;
+                font-family: muli-light;
+            }
+        }
+
+        .enquiry {
+            text-align: center;
+            color: $dark;
+            font-family: muli-regular;
+            font-size: 16px;
+
+            a {
+                font-family: muli-bold;
+                color: $dark;
+            }
+        }
+    }
+
+    .right-column {
+        flex-basis: 60%;
+        flex-shrink: 0;
+        color: #fff;
+        padding: 120px 70px;
+        overflow: hidden;
+        flex: 1;
+
+        // @media (min-width: $md-laptop-breakpoint) {
+        //     flex-basis: 60%;
+        //     flex-shrink: 0;
+        //     color: #fff;
+        //     padding: 84px 10px;
+        //     overflow: hidden;
+        //     flex: 1;
+        // }
+
+        @media (min-width: $lg-laptop-breakpoint) {
+            padding: 84px;
+        }
+
+        @media (min-width: $wide-screens-breakpoint) {
+            padding-top: 120px;
+            padding-right: 200px;
+        }
+
+        h1 {
+            font-family: apercu-pro-medium;
+            font-size: 33px;
+            font-weight: 100;
+            text-align: right;
+
+            @media (min-width: $lg-laptop-breakpoint) {
+                font-size: 62px;
+            }
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            width: 400px;
+            position: absolute;
+            bottom: 80px;
+            right: -11vw;
+
+            @media (min-width: $md-laptop-breakpoint) {
+                bottom: 60px;
+                right: -8vw;
+            }
+
+            @media (min-width: $lg-laptop-breakpoint) {
+                right: 15vw;
+            }
+            @media (min-width: $xl-laptop-breakpoint) {
+                width: 500px;
+            }
+
+            @media (min-width: $wide-screens-breakpoint) {
+                width: 30%;
+            }
+        }
+    }
+}

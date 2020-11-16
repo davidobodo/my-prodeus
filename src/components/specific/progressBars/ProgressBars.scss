@@ -1,0 +1,36 @@
+@import "@/styles/Global.scss";
+
+.linear-progress-component {
+    .react-sweet-progress-symbol {
+        display: none !important;
+    }
+
+    .react-sweet-progress {
+        margin-bottom: 10px;
+    }
+
+    &__values {
+        display: flex;
+        justify-content: space-between;
+        h6 {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.circular-progress-component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .react-sweet-progress-circle-outer {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .react-sweet-progress-symbol {
+        display: none;
+    }
+}

@@ -1,0 +1,146 @@
+@import "@/styles/Global.scss";
+
+.peer-review-component {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 25px 30px;
+    margin-bottom: 40px;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        h2 {
+            color: $ash;
+        }
+    }
+
+    &__content {
+        margin-top: 30px;
+
+        .question {
+            margin-bottom: 25px;
+
+            .title {
+                margin-bottom: 15px;
+            }
+
+            &:nth-child(1) {
+                .answer {
+                    display: flex;
+
+                    .img-wrapper {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-right: 15px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                .answer {
+                    &__option {
+                        display: inline-flex;
+                        flex-direction: column;
+                        align-items: center;
+                        margin-right: 20px;
+
+                        svg {
+                            cursor: pointer;
+                        }
+
+                        &__text {
+                            font-family: muli-light;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                .added-by-creator {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    &__option {
+                        background-color: $light-ash;
+                        padding: 5px 10px 5px 15px;
+                        border-radius: 30px;
+                        margin-bottom: 10px;
+                        margin-right: 3px;
+                        display: flex;
+                        align-items: center;
+                        cursor: not-allowed;
+
+                        &__text {
+                            font-family: roboto-regular;
+                            font-size: 18px;
+                            color: $ash;
+                            margin-right: 3px;
+                        }
+
+                        &.isChecked {
+                            background-color: $blue;
+
+                            .added-by-creator__option__text {
+                                color: #fff;
+                            }
+                        }
+
+                        //Checkbox overide
+                        .plus-minus-checkbox-component {
+                            cursor: not-allowed;
+
+                            input {
+                                cursor: not-allowed;
+                            }
+                            .custom-checkbox {
+                                background-color: $ash;
+
+                                &:after,
+                                &:before {
+                                    background-color: #fff;
+                                }
+                            }
+
+                            input:checked ~ .custom-checkbox {
+                                background-color: #fff;
+
+                                &:after {
+                                    background-color: $blue;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            //////////////////
+            //Dropdown overide
+            .dd-header {
+                background-color: $light-ash;
+
+                .dd-header-title {
+                    img {
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            .is-open {
+                .dd-header {
+                    background-color: #fff;
+                }
+            }
+            //////////////////
+            //////////////////
+        }
+    }
+}

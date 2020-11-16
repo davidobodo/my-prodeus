@@ -1,0 +1,99 @@
+@import "@/styles/Global.scss";
+
+.previews-component {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 30px;
+
+    &::-webkit-scrollbar {
+        height: 3px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: $light-ash;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $ash;
+    }
+
+    .preview-card-wrapper {
+        margin-right: 40px;
+        .preview-card {
+            .image-wrapper {
+                background-color: red;
+                height: 210px;
+                width: 360px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+
+            .category {
+                text-transform: uppercase;
+                margin-bottom: 5px;
+            }
+
+            .caption {
+                margin-bottom: 12px;
+            }
+
+            .info {
+                display: flex;
+
+                section:first-child {
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        &.add-more {
+            background-color: $light-ash;
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 40px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .plus-icon {
+                cursor: pointer;
+                background-color: #fff;
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                position: relative;
+                margin-bottom: 20px;
+                display: block;
+
+                span {
+                    width: 17px;
+                    height: 4px;
+                    background-color: $ash;
+                    display: block;
+                    border-radius: 50px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    transition: transform 200ms ease-in-out;
+
+                    &:nth-child(2) {
+                        width: 3px;
+                        height: 17px;
+                    }
+                }
+            }
+
+            h2 {
+                color: $ash;
+                font-family: muli-light;
+                text-align: center;
+            }
+        }
+    }
+}

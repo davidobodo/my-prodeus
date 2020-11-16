@@ -1,0 +1,14 @@
+@import "@/styles/Global.scss";
+
+.likes-component {
+    background-color: $blue;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: 55px;
+    justify-content: space-between;
+    padding: 0px 8px;
+    color: #fff;
+    font-family: muli-bold;
+    height: 26px;
+}

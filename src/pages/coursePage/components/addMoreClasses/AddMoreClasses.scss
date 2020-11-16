@@ -1,0 +1,44 @@
+@import "@/styles/Global.scss";
+
+.add-more-classes-component {
+    padding-top: 50px;
+    display: flex;
+
+    @media (min-width: $md-laptop-breakpoint) {
+        padding-top: 70px;
+    }
+
+    &__content {
+        .search-filter-wrapper {
+            margin: 0px 0px 40px;
+
+            @media (min-width: $md-laptop-breakpoint) {
+                margin: 0px 0px 40px;
+            }
+        }
+        .group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 40px;
+            margin: 0px 0px 40px;
+
+            @media (min-width: $md-laptop-breakpoint) {
+                margin: 0px 0px 40px;
+            }
+
+            .class-preview-card-component {
+                .image-wrapper {
+                    width: 100%; //Component override
+                }
+            }
+        }
+
+        .advert-wrapper {
+            margin-bottom: 60px;
+        }
+    }
+
+    .filter-sidebar-component {
+        margin-left: 30px;
+    }
+}

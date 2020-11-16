@@ -1,0 +1,24 @@
+@import "@/styles/Global.scss";
+
+.my-custom-advert-one {
+    background-color: #fff;
+    height: 120px;
+    border-bottom: 1px solid $ash;
+    border-top: 1px solid $ash;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .image {
+        width: 80%;
+        height: 70%;
+    }
+
+    .cancel-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,122 @@
+@import "@/styles/Global.scss";
+
+.class-preview-card-component {
+    .image-wrapper {
+        background-color: $ash;
+        //The responsiveness of this width varies depending on the screen a user vists, therefore it(responsiveness) would be set in the screen and not here
+        width: 360px;
+        padding-top: 56.25%; //Help to maintain an aspect ratio of 16:9
+        border-radius: 10px;
+        margin-bottom: 10px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        cursor: pointer;
+
+        .badge-new {
+            position: absolute;
+            color: #fff;
+            text-transform: uppercase;
+            background-color: #29c677;
+            padding: 0px 8px;
+            top: 10px;
+            left: 10px;
+            border-radius: 5px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+        }
+
+        .likes-wrapper {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+        .bottom-actions {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            display: none;
+
+            .popup {
+                position: absolute;
+                background-color: #fff;
+                padding: 7px 13px;
+                border-radius: 5px;
+                bottom: 128%;
+                z-index: 20;
+                box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+                color: $dark;
+                white-space: nowrap;
+                opacity: 0;
+                transition: opacity 100ms ease-in-out;
+                transition-delay: 2s;
+
+                &:after {
+                    content: "";
+                    border-top: 9px solid #fff;
+                    border-left: 6px solid transparent;
+                    border-right: 6px solid transparent;
+                    position: absolute;
+                    left: 12px;
+                    top: 100%;
+                }
+            }
+
+            svg {
+                cursor: pointer;
+            }
+
+            &__bookmark {
+                display: inline-flex;
+                position: relative;
+                margin-right: 7px;
+
+                &:hover {
+                    .popup {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &__add-to-course {
+                display: inline-flex;
+                position: relative;
+
+                &:hover {
+                    .popup {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .bottom-actions {
+                display: block;
+            }
+        }
+    }
+
+    .category {
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        letter-spacing: 1px;
+    }
+
+    .caption {
+        margin-bottom: 12px;
+        color: $dark;
+        cursor: pointer;
+    }
+
+    .info {
+        display: flex;
+
+        section:first-child {
+            margin-right: 20px;
+        }
+    }
+}

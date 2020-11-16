@@ -1,0 +1,280 @@
+@import "@/styles/Global.scss";
+
+.library-sidebar-component {
+    width: 100%;
+    overflow-x: scroll;
+    padding: 30px 60px;
+
+    &::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: $light-ash;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $ash;
+    }
+
+    @media (min-width: $md-laptop-breakpoint) {
+        width: 310px;
+        background-color: #fff;
+        flex-shrink: 0;
+        padding: 60px 30px 60px 50px;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-x: hidden;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+
+        @media (min-width: $md-laptop-breakpoint) {
+            display: block;
+            padding: 0px;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            margin-right: 50px;
+            white-space: nowrap;
+
+            @media (min-width: $md-laptop-breakpoint) {
+                margin-bottom: 30px;
+                margin-right: 0px;
+                display: block;
+                white-space: normal;
+            }
+
+            .main-link {
+                display: flex;
+                align-items: flex-start;
+                font-size: 28px;
+                font-family: muli-regular;
+
+                svg {
+                    margin-right: 15px;
+                    width: 30px;
+                }
+
+                &:hover {
+                    color: $blue;
+
+                    .ls-discover-icon {
+                        path {
+                            fill: $blue;
+                        }
+
+                        circle {
+                            fill: $blue;
+                        }
+                    }
+
+                    .ls-categories-icon {
+                        g {
+                            stroke: $blue;
+                        }
+                    }
+
+                    .ls-history-icon {
+                        path {
+                            fill: $blue;
+
+                            &:nth-child(2) {
+                                fill: none;
+                                stroke: $blue;
+                            }
+                        }
+                    }
+
+                    .ls-saved-icon {
+                        path {
+                            stroke: $blue;
+                        }
+                    }
+
+                    .ls-search-icon {
+                        path {
+                            stroke: $blue;
+                            fill: $blue;
+                        }
+                    }
+
+                    .ls-add-class-icon {
+                        g {
+                            g {
+                                stroke: $blue;
+                            }
+
+                            line {
+                                stroke: $blue;
+                            }
+                        }
+                    }
+                }
+
+                &.active {
+                    color: #000;
+
+                    //-----------------------------------------------------------------------------------
+                    //Different SVG icon active states (Turn icon color from ash to black) ...START...
+                    //-----------------------------------------------------------------------------------
+                    .ls-discover-icon {
+                        path {
+                            fill: #000;
+                        }
+
+                        circle {
+                            fill: #000;
+                        }
+                    }
+
+                    .ls-categories-icon {
+                        g {
+                            stroke: #000;
+                        }
+                    }
+
+                    .ls-history-icon {
+                        path {
+                            fill: #000;
+
+                            &:nth-child(2) {
+                                fill: none;
+                                stroke: #000;
+                            }
+                        }
+                    }
+
+                    .ls-saved-icon {
+                        path {
+                            stroke: #000;
+                        }
+                    }
+
+                    .ls-search-icon {
+                        path {
+                            stroke: #000;
+                            fill: #000;
+                        }
+                    }
+
+                    .ls-add-class-icon {
+                        g {
+                            g {
+                                stroke: #000;
+                            }
+
+                            line {
+                                stroke: #000;
+                            }
+                        }
+                    }
+
+                    //-----------------------------------------------------------------------------------
+                    //Different SVG icon active states (Turn icon color from ash to black) ...END...
+                    //-----------------------------------------------------------------------------------
+                }
+            }
+
+            .sublinks-wrapper {
+                display: none;
+
+                @media (min-width: $md-laptop-breakpoint) {
+                    display: block;
+                    padding-left: 20px;
+                    padding-top: 30px;
+                }
+
+                .sub-links {
+                    &__title {
+                        cursor: pointer;
+                        display: flex;
+                        color: $ash;
+
+                        .plus-minus-icon {
+                            cursor: pointer;
+                            background-color: #fff;
+                            width: 36px;
+                            height: 36px;
+                            border-radius: 50%;
+                            position: relative;
+                            flex-shrink: 0;
+
+                            span {
+                                width: 17px;
+                                height: 3px;
+                                background-color: $ash;
+                                display: block;
+                                border-radius: 5px;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                transition: transform 200ms ease-in-out;
+
+                                &:nth-child(2) {
+                                    width: 3px;
+                                    height: 17px;
+                                }
+                            }
+                        }
+                    }
+
+                    &__sub-sub-links {
+                        padding-left: 36px;
+                        height: 0px;
+                        opacity: 0;
+                        position: relative;
+                        z-index: -10;
+                        li {
+                            a {
+                                font-size: 20px;
+                                font-family: muli-light;
+                                color: $dark;
+
+                                &.active {
+                                    color: $blue;
+                                    font-family: muli-bold;
+                                    font-weight: 100;
+                                }
+                            }
+                        }
+                    }
+
+                    //----------------------------------------------------------------------
+                    //Active state
+                    //----------------------------------------------------------------------
+
+                    &.show-sub-sub-links {
+                        .sub-links__title {
+                            color: $dark;
+                        }
+                        .sub-links__sub-sub-links {
+                            height: auto;
+                            opacity: 1;
+                            padding-top: 20px;
+                            z-index: 1;
+                        }
+
+                        .plus-minus-icon {
+                            span {
+                                background-color: $dark;
+                                &:nth-child(2) {
+                                    transform: translate(-50%, -50%) rotate(-90deg) !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

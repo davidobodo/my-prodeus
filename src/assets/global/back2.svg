@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23.041" height="17.08" viewBox="0 0 23.041 17.08">
+  <g id="arrow" transform="translate(0.578 0.578)">
+    <path id="left-arrow" d="M7.425.241A.807.807,0,1,1,8.573,1.376L2.757,7.192H21.148a.807.807,0,0,1,.815.8.818.818,0,0,1-.815.815H2.756l5.816,5.806a.824.824,0,0,1,0,1.147.807.807,0,0,1-1.147,0L.232,8.57a.807.807,0,0,1,0-1.135Z" transform="translate(0 0)" fill="#22283a" stroke="#22283a" stroke-width="1"/>
+  </g>
+</svg>

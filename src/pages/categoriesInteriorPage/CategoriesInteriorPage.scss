@@ -1,0 +1,60 @@
+@import "@/styles/Global.scss";
+
+#categories-interior-page {
+    .categories-interior-page {
+        padding-top: 80px;
+
+        &__header {
+            border-bottom: 2px solid $ash;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 30px;
+            margin: 0px 70px 40px;
+
+            h1 {
+                // text-transform: capitalize;
+            }
+
+            .btn-follow {
+                background-color: $ash;
+                color: #fff;
+                border: 0px;
+                border-radius: 20px;
+                padding: 5px 15px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                outline: none;
+
+                span {
+                    margin-bottom: 4px;
+                    display: inline-block;
+                }
+
+                img {
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        &__content {
+            .group {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 40px;
+                margin: 0px 70px 40px;
+
+                .class-preview-card-component {
+                    .image-wrapper {
+                        width: 100%; //Component override
+                        min-width: 300px;
+                    }
+                }
+            }
+
+            .advert-wrapper {
+                margin-bottom: 60px;
+            }
+        }
+    }
+}

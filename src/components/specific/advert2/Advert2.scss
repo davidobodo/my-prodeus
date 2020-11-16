@@ -1,0 +1,18 @@
+@import "@/styles/Global.scss";
+
+.my-custom-advert-two {
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .my-advert-img {
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 120px;
+        width: 800px;
+        margin-top: 30px;
+    }
+}

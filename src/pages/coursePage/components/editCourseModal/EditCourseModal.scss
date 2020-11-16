@@ -1,0 +1,177 @@
+@import "@/styles/Global.scss";
+
+.edit-course-modal-component {
+    padding: 40px 30px;
+    width: 440px !important;
+    border-radius: 20px !important;
+    position: relative;
+
+    .cancel-icon {
+        position: absolute;
+        top: 25px;
+        right: 30px;
+        cursor: pointer;
+    }
+
+    &__form {
+        .input-wrapper {
+            margin-bottom: 30px;
+
+            input {
+                width: 100%;
+                color: $ash;
+            }
+        }
+
+        .textarea-wrapper {
+            margin-bottom: 30px;
+            label {
+                margin-bottom: 8px;
+                display: block;
+                color: $ash;
+                font-size: 12px;
+                text-transform: uppercase;
+            }
+
+            textarea {
+                background-color: #b4b4c926;
+                border-radius: 15px;
+                border: 0;
+                outline: transparent;
+                color: $ash;
+                padding: 15px 25px;
+                width: 100% !important;
+                height: 110px !important;
+                resize: none;
+
+                &::-webkit-scrollbar {
+                    width: 0px;
+                }
+
+                /* Track */
+                &::-webkit-scrollbar-track {
+                    background: $light-ash;
+                }
+
+                /* Handle */
+                &::-webkit-scrollbar-thumb {
+                    background: $ash;
+                }
+            }
+
+            ::placeholder {
+                color: $ash;
+            }
+        }
+
+        .dropdown-wrapper {
+            margin-bottom: 30px;
+
+            &__title {
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 8px;
+            }
+
+            .dd-header {
+                background-color: $light-ash;
+
+                input {
+                    background-color: transparent;
+                }
+            }
+
+            .dd-list {
+                top: 100%;
+            }
+        }
+
+        .course-classes-wrapper {
+            max-height: 300px;
+            overflow-y: scroll;
+            margin-bottom: 30px;
+
+            &::-webkit-scrollbar {
+                width: 0px;
+                height: 0px;
+            }
+
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: $light-ash;
+            }
+
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: $ash;
+            }
+
+            .class-details-wrapper {
+                margin-bottom: 20px;
+            }
+
+            .class-details {
+                display: flex;
+                position: relative;
+
+                &__img-wrapper {
+                    width: 100px;
+                    height: 100px;
+                    background-color: red;
+                    margin-right: 20px;
+                    border-radius: 10px;
+                    flex-shrink: 0;
+                    background-size: cover;
+                    background-position: center;
+                }
+
+                &__details {
+                    h4 {
+                        margin-bottom: 5px;
+                    }
+                }
+
+                .icon-wrapper {
+                    margin-left: 15px;
+                    cursor: pointer;
+                    background-color: $dark;
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 50%;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    span {
+                        width: 17px;
+                        height: 3px;
+                        background-color: #fff;
+                        display: block;
+                        border-radius: 5px;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        transition: transform 200ms ease-in-out;
+
+                        &:nth-child(2) {
+                            width: 3px;
+                            height: 17px;
+                        }
+                    }
+
+                    &.selected {
+                        background-color: $red !important;
+
+                        span {
+                            &:nth-child(2) {
+                                transform: translate(-50%, -50%) rotate(-90deg) !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

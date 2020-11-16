@@ -1,0 +1,269 @@
+//--------------------------------------------------------------------
+//Variables (START)
+//--------------------------------------------------------------------
+$dark: #22283a;
+$ash: #b4b4c9;
+$ash2: #b4b4c926;
+$light-ash: rgba(180, 180, 201, 0.2);
+$blue: #4389f8;
+$light-blue: #e2edfe;
+$purple: #6a28e6;
+$red: #e63146;
+$green: #29c677;
+$yellow: #f7cf34;
+//--------------------------------------------------------------------
+//--------------------------------------------------------------------
+//--------------------------------------------------------------------
+
+//--------------------------------------------------------------------
+//Breakpoints (START)
+//Resolution range: 2560x1440 - 768x1024 ( Width x Height )
+//--------------------------------------------------------------------
+$md-laptop-breakpoint: 992px;
+$lg-laptop-breakpoint: 1024px;
+$xl-laptop-breakpoint: 1224px;
+$wide-screens-breakpoint: 1640px;
+// 1024 - 1224
+// 1224 - 1824
+//--------------------------------------------------------------------
+//--------------------------------------------------------------------
+//--------------------------------------------------------------------
+
+body {
+    background-color: $ash2;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box !important;
+}
+
+//--------------------------------------------------------------------
+// Typography (START)
+//light- regular
+//regular-semi-bold
+//--------------------------------------------------------------------
+//Muli fonts
+@font-face {
+    font-family: muli-regular;
+    src: url(../assets/fonts/muli/Muli.ttf);
+}
+@font-face {
+    font-family: muli-bold;
+    src: url(../assets/fonts/muli/Muli-Bold.ttf);
+}
+@font-face {
+    font-family: muli-extralight;
+    src: url(../assets/fonts/muli/Muli-ExtraLight.ttf);
+}
+@font-face {
+    font-family: muli-light;
+    src: url(../assets/fonts/muli/Muli-Light.ttf);
+}
+@font-face {
+    font-family: muli-semi-bold;
+    src: url(../assets/fonts/muli/Muli-SemiBold.ttf);
+}
+
+//Avenir Font
+@font-face {
+    font-family: apercu-pro-medium;
+    src: url(../assets/fonts/apercu/Apercu-Pro-Medium.otf);
+}
+
+//Roboto Font
+@font-face {
+    font-family: roboto-regular;
+    src: url(../assets//fonts/roboto/Roboto-Regular.ttf);
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: muli-regular;
+    font-size: 18px;
+}
+
+label {
+    font-family: muli-bold;
+    font-size: 12px;
+    color: $ash;
+    letter-spacing: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0px;
+}
+
+h1 {
+    font-size: 24px;
+    font-family: muli-bold;
+    font-weight: 100;
+}
+
+h2 {
+    font-size: 20px;
+    font-family: muli-bold;
+    font-weight: 100;
+}
+
+h3 {
+    font-size: 18px;
+    font-family: muli-bold;
+    font-weight: 100;
+}
+
+h4 {
+    font-size: 16px;
+    font-family: muli-bold;
+    font-weight: 100;
+}
+
+h5 {
+    font-size: 14px;
+    font-family: muli-bold;
+    font-weight: 100;
+}
+
+h6 {
+    color: $ash;
+    font-size: 12px;
+    font-family: muli-bold;
+    font-weight: 100;
+}
+
+p {
+    font-size: 16px;
+    font-family: muli-light;
+}
+
+a {
+    font-family: muli-bold;
+    font-size: 20px;
+    color: $ash;
+
+    // &:hover {
+    //     color: $blue !important;
+    // }
+}
+
+//--------------------------------------------------------------------
+// Typography (END)
+//--------------------------------------------------------------------
+
+.blue {
+    color: $blue !important;
+}
+
+.purple {
+    color: $purple !important;
+}
+
+.ash {
+    color: $ash !important;
+}
+
+//--------------------------------------------------------------------
+//Root page styles
+//--------------------------------------------------------------------
+.app-wrapper {
+    display: flex;
+    // overflow: hidden;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    &__main-body {
+        flex-shrink: 0;
+        width: 100%;
+        transition: transform 200ms ease-in-out;
+        background-color: #fff;
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: $light-ash;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: $ash;
+        }
+    }
+}
+
+.show-daily-snapshot {
+    transform: translateX(-400px);
+}
+
+.show-filter-sidebar {
+    transform: translateX(-380px);
+}
+
+//--------------------------------------------------------------------
+//Library Section styles
+//--------------------------------------------------------------------
+.library-section-wrapper {
+    display: flex;
+    transition: transform 200ms ease-in-out;
+
+    &__left-column {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        @media (min-width: $md-laptop-breakpoint) {
+            flex-direction: row;
+        }
+
+        &__content {
+            background-color: $ash2;
+            flex-shrink: 0;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            margin: 0px 15px;
+
+            @media (min-width: $md-laptop-breakpoint) {
+                overflow: hidden;
+                flex-direction: row;
+                width: calc(100vw - 310px); //350px is the width of the sidebar
+                border-top-right-radius: 0px;
+                margin: 0px;
+                border-right: 15px solid #fff;
+            }
+        }
+    }
+}
+
+.input-error-message {
+    color: $red;
+    margin-top: 7px;
+    margin-left: 12px;
+}
+
+.response-error-message {
+    color: $red;
+    margin-top: 7px;
+    margin-left: 12px;
+}
+.response-success-message {
+    color: green;
+    margin-top: 7px;
+    margin-left: 12px;
+    text-align: center;
+}

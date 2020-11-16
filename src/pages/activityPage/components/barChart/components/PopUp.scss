@@ -1,0 +1,54 @@
+@import "@/styles/Global.scss";
+
+.popup {
+    background-color: #fff;
+    box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1000;
+    padding: 12px;
+    position: absolute;
+    left: -60px;
+    top: -95px;
+
+    //These two declarations exist because the component changes from display none to display flex
+    flex-direction: column;
+    justify-content: space-between;
+
+    display: none;
+
+    &:after {
+        content: "";
+        border-top: 10px solid #fff;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+        width: 0px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__top {
+        background-color: $light-ash;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px 2px;
+        font-size: 10px;
+        margin-bottom: 5px;
+        white-space: nowrap;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h4 {
+            margin-right: 5px;
+        }
+
+        img {
+            margin-right: 5px;
+        }
+    }
+}

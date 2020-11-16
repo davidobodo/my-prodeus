@@ -1,0 +1,47 @@
+/*!
+  Copyright (c) 2017 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+
+/**
+ * @fileOverview Aggregation of ArcPath components.
+ * Orchestrates the rendering of the chart sections,
+ * based on each item's value.
+ * @name Arcs.js
+ * @author JJ Naughton
+ * @license MIT
+ */
+
+/**
+ * @fileOverview ArcPath component.
+ * Rendered chart section dictated by each item.
+ * @name ArcPath.js
+ * @author JJ Naughton
+ * @license MIT
+ */
+
+/**
+ * @fileOverview Legend component.
+ * Orchestrates all rendering each LegendItem component,
+ * based on each item.
+ * @name Legend.js
+ * @author JJ Naughton
+ * @license MIT
+ */
+
+/**
+ * @fileOverview LegendItem component.
+ * Rendered SVG box, label, and value for each item.
+ * @name LegendItem.js
+ * @author JJ Naughton
+ * @license MIT
+ */
+
+/**
+ * @fileOverview The text component in the Donut Chart inner circle.
+ * Shows the selected item's label and value
+ * @name DonutInnerText.js
+ * @author JJ Naughton
+ * @license MIT
+ */
